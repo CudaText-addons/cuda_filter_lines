@@ -1,0 +1,32 @@
+[info]
+title=Filter Lines
+desc=Finds (in current text) lines, which contain custom string/regex
+type=cudatext-plugin
+subdir=cuda_filter_lines
+homepage=
+
+[item1]
+section=commands
+caption=Filter Lines\Filter by string
+method=filter_str
+
+[item2]
+section=commands
+caption=Filter Lines\Filter by reg-ex
+method=filter_regex
+
+[item3]
+section=commands
+caption=Filter Lines\-
+method=_
+
+[item10]
+section=commands
+caption=Filter Lines\Fold by string
+method=fold_str
+
+[item11]
+section=commands
+caption=Filter Lines\Fold by reg-ex
+method=fold_regex
+
