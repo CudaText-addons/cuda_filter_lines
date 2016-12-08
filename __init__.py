@@ -1,6 +1,19 @@
 import re
 from cudatext import *
 
+
+def is_ok(line, test, by_str, nocase):
+    if by_str:
+        if nocase:
+            ok = test.lower() in line.lower()
+        else:
+            ok = test in line
+    else:
+        flags = re.I if nocase else 0
+        ok = bool(re.search(test, line, flags=flags))
+    return ok
+
+
 def do_filter(by_str):
     if by_str:
         msg = 'Filter by string:'
@@ -16,16 +29,7 @@ def do_filter(by_str):
     res = []
     for i in range(ed.get_line_count()):
         line = ed.get_text_line(i)
-        if by_str:
-            if nocase:
-                ok = test.lower() in line.lower()
-            else:
-                ok = test in line
-        else:
-            flags = re.I if nocase else 0
-            ok = bool(re.search(test, line, flags=flags))
-            
-        if ok:
+        if is_ok(line, test, by_str, nocase):
             res.append(line)
     
     if not res:
@@ -33,7 +37,9 @@ def do_filter(by_str):
         return
             
     file_open('')
-    ed.set_prop(PROP_TAB_TITLE, 'Filter: '+test)
+    flag = '' if by_str else 'r' 
+    flag += 'i' if nocase else ''
+    ed.set_prop(PROP_TAB_TITLE, 'Filter['+flag+']: '+test)
     ed.set_text_all('\n'.join(res))
     msg_status('Found %d matching lines' % len(res))
         
