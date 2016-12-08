@@ -1,6 +1,6 @@
 [info]
 title=Filter Lines
-desc=Finds (in current text) lines, which contain custom string/regex
+desc=Finds lines, which contain custom string or regex
 type=cudatext-plugin
 subdir=cuda_filter_lines
 homepage=https://github.com/CudaText-addons/cuda_filter_lines
