@@ -1,3 +1,6 @@
 
+2016.12.09
++ dialog, not 2 commds
+
 2016.12.08
 init

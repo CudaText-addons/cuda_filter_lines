@@ -7,26 +7,5 @@ homepage=https://github.com/CudaText-addons/cuda_filter_lines
 
 [item1]
 section=commands
-caption=Filter Lines\Filter by string
-method=filter_str
-
-[item2]
-section=commands
-caption=Filter Lines\Filter by reg-ex
-method=filter_regex
-
-;[item3]
-;section=commands
-;caption=Filter Lines\-
-;method=_
-;
-;[item10]
-;section=commands
-;caption=Filter Lines\Fold by string
-;method=fold_str
-;
-;[item11]
-;section=commands
-;caption=Filter Lines\Fold by reg-ex
-;method=fold_regex
-;
+caption=Filter Lines
+method=dlg
