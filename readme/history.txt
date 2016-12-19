@@ -1,6 +1,10 @@
 
+2016.12.19
++ option "Sort"
++ option "Save options"
+
 2016.12.09
-+ dialog, not 2 commds
++ dialog added
 
 2016.12.08
 init
